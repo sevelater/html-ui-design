@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Dosis", sans-serif;
+}
+
+.container img {
+  width: 8.3%;
+  height: 13%;
+
+  margin-left: 835px;
+ /* margin-top: 35px; */
+  padding-top: 35px;
+
+  display: flex;
+  cursor: pointer;
+}
+
+.container img:hover {
+  width: 10.2%;
+  height: 16%;
+  align-items: center;
+  transition: 0.8s;
+}
+
+.container img:hover::after {
+  width: 8.3%;
+  height: 13%;
+  align-items: center;
+  transition: 0.8s;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+      rgba(88, 82, 82, 0.4), 
+      rgba(141, 134, 114, 0.2), 
+      rgba(112, 106, 94, 0.4)
+    );
+  background-size: cover;
+}
+
+.navbar {
+  width: 300px;
+  height: 100%;
+  background-color: #928484;
+
+  position: fixed;
+  top: 0;
+  left: -300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0 20% 60% 0;
+  transition: left 0.8s cubic-bezier(1, 0, 0, 1)
+}
+
+.change {
+  left: 0;
+}
+
+.hamburger-menu {
+  width: 35px;
+  height: 30px;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: #f8e4e4;
+  transition: all 0.8s;
+}
+
+.change .line-1 {
+  transform: rotateZ(-405deg) translate(-8px, 6px);
+}
+
+.change .line-2 {
+  opacity: 0;
+}
+
+.change .line-3 {
+  transform: rotateZ(405deg) translate(-8px, -6px);
+}
+
+.nav-list {
+  text-align: right;
+}
+
+.nav-item {
+  list-style: none;
+  margin: 25px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 22px;
+  color: #f8e4e4;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 3px 0;
+}
+
+.nav-link::before, .nav-link::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #f8e4e4;
+  position: absolute;
+  left: 0;
+
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.nav-link::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+.nav-link::before {
+  top: 0;
+  transform-origin: left;
+}
+
+.nav-link:hover::before,.nav-link:hover::after {
+  transform: scaleX(1); 
+}
